@@ -15,10 +15,10 @@ public class Hello {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response get(@QueryParam("nome") String nome){
-        Map<String, String> dados = new HashMap<>();
-        dados.put("mensagem", "Olá " + nome);
+    public Response get(@QueryParam("name") String name){
+        Map<String, String> data = new HashMap<>();
+        data.put("message", "Hello " + name);
 
-        return Response.ok(dados).build();
+        return Response.ok(data).build();
     }
 }

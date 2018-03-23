@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +9,23 @@
 <body>
     <h1>Hello World</h1>
     <div>
-        <label>Nome:</label>
-        <input type="text" id="nome">
-        <button type="button" id="enviar">Enviar</button>
+        <label>Name:</label>
+        <input type="text" id="name">
+        <button type="button" id="send">Send</button>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         window.onload = function() {
-            document.querySelector('#enviar').onclick = enviar;
+            document.querySelector('#send').onclick = send;
 
-            function enviar() {
-                var nome = document.querySelector('#nome').value;
+            function send() {
+                var name = document.querySelector('#name').value;
 
-                axios.get('/api/hello?nome=' + nome)
+                axios.get('/api/hello?name=' + name)
                   .then(function(response){
-                      var resultado = document.createElement('h3');
-                      resultado.innerText = response.data.mensagem;
-                      document.body.appendChild(resultado);
+                      var result = document.createElement('h3');
+                      result.innerText = response.data.message;
+                      document.body.appendChild(result);
                   })
             }
         }
